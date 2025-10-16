@@ -73,11 +73,11 @@ export default function Countries() {
             />
           </div>
           <div className="flex gap-2">
-            <button className="flex items-center gap-2 px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-50 transition-colors">
+            <button className="btn-secondary flex items-center gap-2">
               <Download className="w-4 h-4" />
               <span>Export Rates</span>
             </button>
-            <button className="flex items-center gap-2 px-4 py-2 text-white bg-primary-600 rounded-lg hover:bg-primary-700 transition-colors">
+            <button className="btn-primary flex items-center gap-2">
               <RefreshCw className="w-4 h-4" />
               <span>Refresh</span>
             </button>
@@ -120,15 +120,15 @@ export default function Countries() {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {filteredCurrencies.map((currency) => (
           <div
             key={currency.code}
-            className="card p-6 hover:shadow-soft-xl transition-all cursor-pointer relative"
+            className="group relative bg-white rounded-xl border border-gray-200 p-6 cursor-pointer transition-all duration-300 hover:shadow-soft-xl hover:border-primary-300 hover:-translate-y-1 hover:scale-[1.02]"
           >
             {currency.isConnected && (
               <div className="absolute top-4 right-4">
-                <span className="status-badge bg-gray-900 text-white text-xs flex items-center gap-1">
+                <span className="status-badge bg-gray-900 text-white text-xs flex items-center gap-1 shadow-sm">
                   <Wifi className="w-3 h-3" />
                   Connected
                 </span>
@@ -136,11 +136,11 @@ export default function Countries() {
             )}
 
             <div className="flex items-start gap-3 mb-4">
-              <div className="w-12 h-12 bg-gradient-to-br from-primary-100 to-primary-200 rounded-lg flex items-center justify-center">
+              <div className="w-12 h-12 bg-gradient-to-br from-primary-100 to-primary-200 rounded-lg flex items-center justify-center shadow-sm group-hover:shadow-md group-hover:scale-110 transition-all duration-300">
                 <span className="text-xl font-bold text-primary-700">{currency.code.substring(0, 2)}</span>
               </div>
               <div className="flex-1">
-                <h3 className="font-bold text-gray-900 text-lg">{currency.code}</h3>
+                <h3 className="font-bold text-gray-900 text-lg group-hover:text-primary-700 transition-colors">{currency.code}</h3>
                 <p className="text-sm text-gray-600">{currency.name}</p>
               </div>
             </div>
@@ -148,20 +148,20 @@ export default function Countries() {
             <div className="space-y-2">
               <div className="flex items-baseline justify-between">
                 <span className="text-sm text-gray-600">Exchange Rate</span>
-                <span className="text-xl font-bold text-gray-900">{currency.rate.toLocaleString()}</span>
+                <span className="text-xl font-bold text-gray-900 group-hover:text-primary-700 transition-colors">{currency.rate.toLocaleString()}</span>
               </div>
 
               <div className="flex items-baseline justify-between">
                 <span className="text-sm text-gray-600">24h Change</span>
-                <span className={`text-sm font-medium ${currency.change >= 0 ? 'text-green-600' : 'text-red-600'}`}>
+                <span className={`text-sm font-medium px-2 py-1 rounded-lg transition-all ${currency.change >= 0 ? 'text-green-700 bg-green-50 group-hover:bg-green-100' : 'text-red-700 bg-red-50 group-hover:bg-red-100'}`}>
                   {currency.change >= 0 ? '↑' : '↓'} {Math.abs(currency.change)}%
                 </span>
               </div>
 
-              <div className="pt-2 border-t border-gray-200">
+              <div className="pt-3 mt-3 border-t border-gray-200">
                 <div className="flex items-center justify-between text-xs text-gray-500">
                   <span>Last Updated</span>
-                  <span>18-07-25 AM</span>
+                  <span className="font-medium">18-07-25 AM</span>
                 </div>
               </div>
             </div>

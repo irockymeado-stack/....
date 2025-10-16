@@ -9,3 +9,170 @@
     -moz-osx-font-smoothing: grayscale;
   }
 }
+
+@layer components {
+  .card {
+    background-color: white;
+    border-radius: 0.75rem;
+    border: 1px solid rgb(243 244 246);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    transition: all 0.3s;
+  }
+
+  .card:hover {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    border-color: rgb(229 231 235);
+    transform: translateY(-2px);
+  }
+
+  .metric-card {
+    background-color: white;
+    border-radius: 0.75rem;
+    border: 1px solid rgb(243 244 246);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    padding: 1.5rem;
+    transition: all 0.3s;
+  }
+
+  .metric-card:hover {
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    transform: translateY(-4px) scale(1.02);
+  }
+
+  .input-field {
+    width: 100%;
+    padding: 0.625rem 1rem;
+    border: 1px solid rgb(209 213 219);
+    border-radius: 0.5rem;
+    outline: none;
+    transition: all 0.2s;
+  }
+
+  .input-field:focus {
+    ring: 2px;
+    ring-color: rgb(14 165 233);
+    border-color: transparent;
+  }
+
+  .input-field:hover {
+    border-color: rgb(156 163 175);
+  }
+
+  .btn-primary {
+    background-color: rgb(2 132 199);
+    color: white;
+    padding: 0.625rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    transition: all 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+
+  .btn-primary:hover {
+    background-color: rgb(3 105 161);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  .btn-primary:active {
+    transform: scale(0.95);
+  }
+
+  .btn-secondary {
+    background-color: white;
+    color: rgb(55 65 81);
+    padding: 0.625rem 1.5rem;
+    border-radius: 0.5rem;
+    font-weight: 500;
+    border: 1px solid rgb(209 213 219);
+    transition: all 0.2s;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  }
+
+  .btn-secondary:hover {
+    background-color: rgb(249 250 251);
+    border-color: rgb(156 163 175);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+  }
+
+  .btn-secondary:active {
+    transform: scale(0.95);
+  }
+
+  .status-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+    padding: 0.25rem 0.625rem;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    transition: all 0.2s;
+  }
+
+  .status-completed {
+    background-color: rgb(220 252 231);
+    color: rgb(22 163 74);
+  }
+
+  .status-completed:hover {
+    background-color: rgb(187 247 208);
+  }
+
+  .status-pending {
+    background-color: rgb(254 243 199);
+    color: rgb(217 119 6);
+  }
+
+  .status-pending:hover {
+    background-color: rgb(253 230 138);
+  }
+
+  .status-failed {
+    background-color: rgb(254 226 226);
+    color: rgb(220 38 38);
+  }
+
+  .status-failed:hover {
+    background-color: rgb(254 202 202);
+  }
+
+  .interactive-row {
+    transition: all 0.2s;
+    cursor: pointer;
+  }
+
+  .interactive-row:hover {
+    background-color: rgb(249 250 251);
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  .icon-button {
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    transition: all 0.2s;
+  }
+
+  .icon-button:hover {
+    background-color: rgb(243 244 246);
+  }
+
+  .icon-button:active {
+    transform: scale(0.95);
+  }
+
+  .glass-card {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(8px);
+    border-radius: 0.75rem;
+    border: 1px solid rgb(229 231 235);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s;
+  }
+
+  .glass-card:hover {
+    background-color: rgba(255, 255, 255, 0.95);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+    border-color: rgb(191 219 254);
+    transform: translateY(-2px);
+  }
+}

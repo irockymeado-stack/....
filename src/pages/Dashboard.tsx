@@ -155,7 +155,7 @@ export default function Dashboard() {
 
             <div className="space-y-4">
               {conversions.map((conv) => (
-                <div key={conv.id} className="flex items-center gap-4 p-4 bg-gray-50 rounded-lg hover:bg-gray-100 transition-colors">
+                <div key={conv.id} className="flex items-center gap-4 p-4 bg-white border border-gray-200 rounded-xl hover:shadow-soft-lg hover:border-primary-200 hover:-translate-y-0.5 transition-all duration-300">
                   <div className="flex items-center gap-3 flex-1">
                     <div className="flex items-center gap-2">
                       <span className="text-sm font-medium text-gray-700">US</span>
@@ -167,7 +167,7 @@ export default function Dashboard() {
                     <input
                       type="number"
                       value={conv.amount}
-                      className="w-24 px-3 py-1 border border-gray-300 rounded-lg text-sm"
+                      className="w-24 px-3 py-1 border border-gray-300 rounded-lg text-sm hover:border-gray-400 transition-colors"
                       readOnly
                     />
                   </div>
@@ -184,15 +184,15 @@ export default function Dashboard() {
                   <div className="flex items-center gap-2">
                     <button
                       onClick={() => toggleVisibility(conv.id)}
-                      className="p-2 hover:bg-white rounded-lg transition-colors"
+                      className="icon-button"
                     >
                       {conv.visible ? <Eye className="w-4 h-4 text-gray-600" /> : <EyeOff className="w-4 h-4 text-gray-400" />}
                     </button>
                     <button
                       onClick={() => removeConversion(conv.id)}
-                      className="p-2 hover:bg-white rounded-lg transition-colors"
+                      className="icon-button hover:bg-red-50"
                     >
-                      <X className="w-4 h-4 text-gray-600" />
+                      <X className="w-4 h-4 text-gray-600 hover:text-red-600" />
                     </button>
                   </div>
                 </div>
@@ -212,8 +212,8 @@ export default function Dashboard() {
             <h2 className="text-lg font-semibold text-gray-900 mb-4">Recent Transactions</h2>
             <div className="space-y-3">
               {recentTransactions.map((tx) => (
-                <div key={tx.id} className="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg transition-colors cursor-pointer">
-                  <div className={`w-10 h-10 ${tx.color} rounded-full flex items-center justify-center text-white font-medium`}>
+                <div key={tx.id} className="interactive-row flex items-center gap-3 p-3 rounded-lg border border-transparent hover:border-primary-200 hover:shadow-soft">
+                  <div className={`w-10 h-10 ${tx.color} rounded-full flex items-center justify-center text-white font-medium shadow-sm`}>
                     {tx.initial}
                   </div>
                   <div className="flex-1">
@@ -311,8 +311,8 @@ export default function Dashboard() {
           </div>
           <div className="space-y-3">
             {topCurrencyPairs.map((pair) => (
-              <div key={pair.rank} className="flex items-center gap-3 p-3 hover:bg-gray-50 rounded-lg transition-colors">
-                <div className="w-8 h-8 bg-primary-100 text-primary-600 rounded-full flex items-center justify-center font-bold text-sm">
+              <div key={pair.rank} className="interactive-row flex items-center gap-3 p-3 rounded-lg border border-transparent hover:border-primary-200 hover:shadow-soft">
+                <div className="w-8 h-8 bg-gradient-to-br from-primary-100 to-primary-200 text-primary-700 rounded-full flex items-center justify-center font-bold text-sm shadow-sm">
                   #{pair.rank}
                 </div>
                 <div className="flex-1">
